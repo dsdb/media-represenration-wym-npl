@@ -5,8 +5,8 @@ emoji==2.7.0
 spacy==3.6.1
 nltk==3.8.1
 beautifulsoup4==4.12.2
-matplotlib==3.7.2
 plotly==5.15.0
+matplotlib==3.7.2
 seaborn==0.12.2
 sns==0.1
 bs4==0.0.1

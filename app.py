@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 import media_represntation
 
 
-# def process_data():
-#     media_represntation.process_news_content() 
-#     return media_represntation.proccessed_df
-
 def main():    
 
     # Add logo
