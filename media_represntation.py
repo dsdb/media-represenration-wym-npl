@@ -18,7 +18,8 @@ import matplotlib.pyplot as plt
 
 
 # load spacy model and sentiment analyzer
-model_path = "model\en_core_web_sm\en_core_web_sm-3.6.0"
+#model_path = "model\en_core_web_sm\en_core_web_sm-3.6.0"
+model_path = "model/en_core_web_sm/en_core_web_sm-3.6.0"
 nlp_spacy = spacy.load(model_path)
 nlp_sia = SentimentIntensityAnalyzer()
 
