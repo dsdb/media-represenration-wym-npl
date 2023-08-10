@@ -1,11 +1,13 @@
 # Import import packages
 import pandas as pd
 import spacy
+import os
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+#from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.sentiment import SentimentIntensityAnalyzer
 import re
 from bs4 import BeautifulSoup
 import unicodedata
@@ -16,7 +18,8 @@ import matplotlib.pyplot as plt
 
 
 # load spacy model and sentiment analyzer
-nlp_spacy = spacy.load("en_core_web_sm")
+model_path = "model\en_core_web_sm\en_core_web_sm-3.6.0"
+nlp_spacy = spacy.load(model_path)
 nlp_sia = SentimentIntensityAnalyzer()
 
 
@@ -36,7 +39,10 @@ category_files = {
 # Dictionary to hold processed dataframe for each category
 proccessed_df = {}
 
+
 # Load NLTK resources
+nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
+os.environ['NLTK_DATA'] = nltk_data_path
 # nltk.download('punkt')
 # nltk.download('stopwords')
 # nltk.download('wordnet')
