@@ -21,11 +21,11 @@ news_dict = None
 
 # List of news categories and their respecive CSV files
 category_files = {
-    #'political': 'data\Political\onlinekhabar_political_uptopageno209_data.csv',
-    'economy': 'data\Economy\onlinekhabar_economy_uptopageno209_data.csv',
-    'lifestyle': 'data\Lifestyle\onlinekhabar_lifestyle_uptopageno209_data.csv',
-    'sports': 'data\Sports\onlinekhabar_sports_uptopageno209_data.csv',
-    #'travel': 'data\Travel\onlinekhabar_travel_uptopageno209_data.csv'
+    #'political': 'data/Political/onlinekhabar_political_uptopageno209_data.csv',
+    'economy': 'data/Economy/onlinekhabar_economy_uptopageno209_data.csv',
+    'lifestyle': 'data/Lifestyle/onlinekhabar_lifestyle_uptopageno209_data.csv',
+    'sports': 'data/Sports/onlinekhabar_sports_uptopageno209_data.csv',
+    #'travel': 'data/Travel/onlinekhabar_travel_uptopageno209_data.csv'
 }
 
 # Dictionary to hold processed dataframe for each category
@@ -38,9 +38,6 @@ nlp_spacy = spacy.load(model_path)
 # Load NLTK resources
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 os.environ['NLTK_DATA'] = nltk_data_path
-
-import nltk
-nltk.download('vader_lexicon')
 
 nlp_sia = SentimentIntensityAnalyzer()
 
