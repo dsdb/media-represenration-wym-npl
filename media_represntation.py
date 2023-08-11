@@ -1,19 +1,18 @@
-# Import import packages
+# Import necessary packages
 import pandas as pd
 import spacy
 import os
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer, WordNetLemmatizer
+from nltk.stem import WordNetLemmatizer
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import re
 from bs4 import BeautifulSoup
-import unicodedata
 import emoji
-import seaborn as sns
 import plotly.express as px
-import matplotlib.pyplot as plt
+import streamlit as st
+
 
 # News datafrane and Dictionary
 news_df = None
@@ -35,10 +34,17 @@ proccessed_df = {}
 model_path = "model/en_core_web_sm/en_core_web_sm-3.6.0"
 nlp_spacy = spacy.load(model_path)
 
-# Load NLTK resources
+# Set NLTK data path
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 os.environ['NLTK_DATA'] = nltk_data_path
 
+# Load NLTK resources
+nltk.download('punkt', download_dir=nltk_data_path)
+nltk.download('stopwords', download_dir=nltk_data_path)
+nltk.download('wordnet', download_dir=nltk_data_path)
+nltk.download('vader_lexicon', download_dir=nltk_data_path)
+
+# Load SentimentIntensityAnalyzer
 nlp_sia = SentimentIntensityAnalyzer()
 
 # Text Preprocessing
@@ -156,7 +162,7 @@ def visaul_representation(df):
 # Main  Function
 def main():
     
-   news_df, mews_dict = process_news_content()    
+   news_df, news_dict = process_news_content()    
    visaul_representation(news_df)
 
 
