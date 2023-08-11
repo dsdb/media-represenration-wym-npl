@@ -40,14 +40,13 @@ category_files = {
 proccessed_df = {}
 
 
+
 # Load NLTK resources
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 os.environ['NLTK_DATA'] = nltk_data_path
 
-nltk_corpus = ['punkt','stopwords','wordnet','gutenburg','inaugural','webtext', 'vader_lexicon']
-
-for corpus in nltk_corpus:
-    nltk.download(corpus)
+import nltk
+nltk.download('vader_lexicon')
 
 # Text Preprocessing
 def preprocess_text(text):    
