@@ -39,6 +39,12 @@ nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 os.environ['NLTK_DATA'] = nltk_data_path
 
 # Load NLTK resources
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('vader_lexicon')
+
 nltk.download('punkt', download_dir=nltk_data_path)
 nltk.download('stopwords', download_dir=nltk_data_path)
 nltk.download('wordnet', download_dir=nltk_data_path)
