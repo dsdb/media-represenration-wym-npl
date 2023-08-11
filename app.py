@@ -8,7 +8,7 @@ import media_represntation
 def main():    
 
     # Add logo
-    logo_image = 'logo\onlinekhabar.png'
+    logo_image = 'logo/onlinekhabar.png'
     st.image(logo_image, use_column_width=True)
 
     st.title("Media Representation Dashboard")
