@@ -15,15 +15,7 @@ import seaborn as sns
 import plotly.express as px
 import matplotlib.pyplot as plt
 
-
-# load spacy model and sentiment analyzer
-#model_path = "model\en_core_web_sm\en_core_web_sm-3.6.0"
-model_path = "model/en_core_web_sm/en_core_web_sm-3.6.0"
-nlp_spacy = spacy.load(model_path)
-nlp_sia = SentimentIntensityAnalyzer()
-
-
-# Expose datafrane and Dictionary
+# News datafrane and Dictionary
 news_df = None
 news_dict = None
 
@@ -39,7 +31,10 @@ category_files = {
 # Dictionary to hold processed dataframe for each category
 proccessed_df = {}
 
-
+# load spacy model and sentiment analyzer
+#model_path = "model\en_core_web_sm\en_core_web_sm-3.6.0"
+model_path = "model/en_core_web_sm/en_core_web_sm-3.6.0"
+nlp_spacy = spacy.load(model_path)
 
 # Load NLTK resources
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
@@ -47,6 +42,8 @@ os.environ['NLTK_DATA'] = nltk_data_path
 
 import nltk
 nltk.download('vader_lexicon')
+
+nlp_sia = SentimentIntensityAnalyzer()
 
 # Text Preprocessing
 def preprocess_text(text):    
