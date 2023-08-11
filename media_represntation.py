@@ -44,9 +44,10 @@ proccessed_df = {}
 # Load NLTK resources
 nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
 os.environ['NLTK_DATA'] = nltk_data_path
-# nltk.download('punkt')
-# nltk.download('stopwords')
-# nltk.download('wordnet')
+#nltk.download()
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 # Text Preprocessing
 def preprocess_text(text):    
