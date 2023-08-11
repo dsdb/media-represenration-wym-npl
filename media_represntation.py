@@ -6,8 +6,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
-#from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.sentiment import SentimentIntensityAnalyzer
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import re
 from bs4 import BeautifulSoup
 import unicodedata
@@ -48,6 +47,7 @@ os.environ['NLTK_DATA'] = nltk_data_path
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('vader_lexicon')
 
 # Text Preprocessing
 def preprocess_text(text):    
