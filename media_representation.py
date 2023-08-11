@@ -39,6 +39,10 @@ os.environ['NLTK_DATA'] = nltk_data_path
 
 # Load NLTK resources
 import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
