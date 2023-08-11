@@ -139,18 +139,24 @@ def process_news_content():
     return News_all_data, proccessed_df
 
 # Visualization of news data
-def visaul_representation(df):    
+def visaul_representation(df):   
+    color_pallet = {
+        "positive": "green",
+        "negative": "red"
+    } 
 # Bar chart for total positive/negative sentiment by category
     sentiment_chart = px.bar(df, x='category', color='sentiment',
     title='Total positive/Negative Sentiment by Category',
-    labels={'category': 'News Category', 'sentiment': 'Sentiment'})
+    labels={'category': 'News Category', 'sentiment': 'Sentiment'},
+    color_discrete_map=color_pallet)
     
 
 # Bar chart for total keyword presence by category
     keyword_chart = px.bar(df, x='category', color='keyword_present',
     title='Total Keyword Presence by Category',
     labels={'category': 'News Category', 'keyword_present': 'Keyword Present'},
-    category_orders={'keyword_present': [True, False]})
+    category_orders={'keyword_present': [True, False]},
+    color_discrete_map={'True': "blue", False: "gray"})
     
 # Create a table for total entity count by category
     entity_table = df.groupby('category')['keyword_present'].sum().reset_index    
